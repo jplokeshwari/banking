@@ -24,5 +24,31 @@ int main() {
         printf("6. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+switch (choice) {
+            case 1:
+                createAccount(&userAccount);
+                break;
+            case 2:
+                displayBalance(&userAccount);
+                break;
+            case 3:
+                deposit(&userAccount);
+                break;
+            case 4:
+                withdraw(&userAccount);
+                break;
+            case 5:
+                closeAccount(&userAccount);
+                break;
+            case 6:
+                printf("Thank you for using the Online Banking System. Goodbye!\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 6);
+
+    return 0;
+}
 
         
