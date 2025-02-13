@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct {
+    char accountHolder[50];
+    int accountNumber;
+    float balance;
+} Account;
+void createAccount(Account *account);
+void displayBalance(const Account *account);
+void deposit(Account *account);
+void withdraw(Account *account);
+void closeAccount(Account *account);
+int main() {
+    Account userAccount = {"", 0, 0.0};
+    int choice;
+    printf("=== Welcome to the Online Banking System ===\n");
+    do {
+        printf("\nMenu:\n");
+        printf("1. Create Account\n");
+        printf("2. Check Balance\n");
+        printf("3. Deposit Money\n");
+        printf("4. Withdraw Money\n");
+        printf("5. Close Account\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        
