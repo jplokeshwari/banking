@@ -50,5 +50,29 @@ switch (choice) {
 
     return 0;
 }
+void createAccount(Account *account) {
+    if (account->accountNumber != 0) {
+        printf("An account already exists. Please close it before creating a new one.\n");
+        return;
+    }
+    printf("Enter account holder's name: ");
+    scanf(" %[^\n]%*c", account->accountHolder);
+    printf("Enter account number: ");
+    scanf("%d", &account->accountNumber);
+    account->balance = 0.0;  // Initial balance is zero
+    printf("Account created successfully!\n");
+}
+
+void displayBalance(const Account *account) {
+    if (account->accountNumber == 0) {
+        printf("No account found. Please create an account first.\n");
+        return;
+    }
+    printf("Account Holder: %s\n", account->accountHolder);
+    printf("Account Number: %d\n", account->accountNumber);
+    printf("Current Balance: $%.2f\n", account->balance);
+}
+
+
 
         
